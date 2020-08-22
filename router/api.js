@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/userdb');
 
 router.get('/iot',function(req,res,next){
-    User.find({ userName: req.query.name }).then(function(users){
+    User.find({ userName: req.query.name, password: req.query.pwd }).then(function(users){
         res.send(users);
     });
 });
