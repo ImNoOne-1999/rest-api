@@ -6,7 +6,7 @@ router.get('/iot',function(req,res,next){
     User.find({ userName: req.query.name, password: req.query.pwd }).then(function(users){
         res.send(users);
     });
-});
+});    
 
 router.post('/iot',function(req,res,next){
     User.create(req.body).then(function(user){
