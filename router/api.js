@@ -11,7 +11,7 @@ router.get("/iot", function (req, res, next) {
 });
 
 router.get("/", function (req, res, next) {
-  res.send("Hello World ");
+  res.send("Hello World .");
 });
 router.post("/iot", function (req, res, next) {
   User.create(req.body)
