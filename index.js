@@ -5,14 +5,10 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-<<<<<<< HEAD
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/iotgo',{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
-=======
 mongoose.connect(
   `mongodb+srv://admin:admin@cluster0.wkqqw.mongodb.net/mydb?retryWrites=true&w=majority`,
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
->>>>>>> 8b0bda89433263f62ba6d41bd33bcda7427a5bd4
 mongoose.Promise = global.Promise;
 
 //middleware
