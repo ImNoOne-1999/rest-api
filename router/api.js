@@ -1,12 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/userdb');
+const DeviceFetcher = require('../models/userdb');
 
 router.get('/iot',function(req,res,next){
     User.find({ userName: req.query.name, password: req.query.pwd }).then(function(users){
         res.send(users);
     });
 });    
+
+router.post('/devicefetcher',function(req,res,next){
+    DeviceFetcher.create(req.body).then(function(device){
+        res.send(device);
+    }).catch(next);
+});
 
 router.post('/iot',function(req,res,next){
     User.create(req.body).then(function(user){
