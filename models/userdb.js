@@ -17,7 +17,7 @@ const UserSchema = new Schema({
 });
 
 const DeviceSchema = new Schema({
-    macID: {
+    macId: {
         type: String,
         required: [true, 'MacId is required']
     },
@@ -39,3 +39,4 @@ const User = mongoose.model('user',UserSchema);
 const DeviceFetcher = mongoose.model('deviceFetcher',DeviceSchema);
 
 module.exports = User;
+module.exports = DeviceFetcher;

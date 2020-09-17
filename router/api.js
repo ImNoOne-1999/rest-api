@@ -10,8 +10,8 @@ router.get('/iot',function(req,res,next){
 });    
 
 router.post('/devicefetcher',function(req,res,next){
-    DeviceFetcher.create(req.body).then(function(device){
-        res.send(device);
+    DeviceFetcher.create(req.body).then(function(deviceFetcher){
+        res.send(deviceFetcher);
     }).catch(next);
 });
 
