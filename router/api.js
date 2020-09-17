@@ -9,6 +9,12 @@ router.get('/iot',function(req,res,next){
     });
 });    
 
+router.get('/devicefetcher',function(req,res,next){
+    DeviceFetcher.find({ macId: req.query.macid }).then(function(deviceFetcher){
+        res.send(deviceFetcher);
+    });
+});
+
 router.post('/devicefetcher',function(req,res,next){
     DeviceFetcher.create(req.body).then(function(deviceFetcher){
         res.send(deviceFetcher);
