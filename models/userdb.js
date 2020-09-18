@@ -16,27 +16,8 @@ const UserSchema = new Schema({
     }
 });
 
-const DeviceSchema = new Schema({
-    macId: {
-        type: String,
-        required: [true, 'MacId is required']
-    },
-    authId: {
-        type: String,
-        required: [true, 'AuthId is required']
-    },
-    loginTime: {
-        type: String,
-        required: [true, 'Login field is required']
-    },
-    deviceValid: {
-        type: Boolean,
-        default: true
-    }
-});
+
 
 const User = mongoose.model('user',UserSchema);
-const DeviceFetcher = mongoose.model('deviceFetcher',DeviceSchema);
 
 module.exports = User;
-module.exports = DeviceFetcher;

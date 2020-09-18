@@ -1,5 +1,6 @@
 const express = require("express");
-const routes = require("./router/api");
+const userRoutes = require("./router/api");
+const deviceRoutes = require("./router/apiDevice");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -19,7 +20,8 @@ app.use(bodyParser.json());
 
 //initialize
 
-app.use("/api", routes);
+app.use("/api", userRoutes);
+app.use("/api", deviceRoutes);
 
 //error handling
 app.use(function (err, req, res, next) {
