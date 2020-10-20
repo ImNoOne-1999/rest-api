@@ -1,6 +1,7 @@
 const express = require("express");
 const userRoutes = require("./router/api");
 const deviceRoutes = require("./router/apiDevice");
+const statusRoutes = require("./router/apiStatus");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 app.use("/api", userRoutes);
 app.use("/api", deviceRoutes);
+app.use("/api", statusRoutes);
 
 //error handling
 app.use(function (err, req, res, next) {
