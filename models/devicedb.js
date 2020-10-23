@@ -12,7 +12,7 @@ const DeviceSchema = new Schema({
     },
     loginTime: {
         type: String,
-        required: [true, 'Login field is required']
+        default: (new Date()).getHours() +':'+ (new Date()).getMinutes() +':'+ (new Date()).getSeconds()
     },
     deviceValid: {
         type: Boolean,

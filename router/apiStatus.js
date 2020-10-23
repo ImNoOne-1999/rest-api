@@ -14,4 +14,12 @@ statusRouter.post('/statusfetcher',function(req,res,next){
     }).catch(next);
 });
 
+statusRouter.put('/statusfetcher/:id',function(req,res,next){
+    StatusFetcher.findByIdAndUpdate({ _id: req.params.id}, req.body).then(function(){
+        StatusFetcher.findOne({ _id: req.params.id }).then(function(statusFetcher){
+            res.send(statusFetcher);
+        });
+    });
+});
+
 module.exports = statusRouter;
